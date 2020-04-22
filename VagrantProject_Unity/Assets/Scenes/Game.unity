@@ -3654,6 +3654,46 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2354766402577757347, guid: 8e45e34402f46704bb59c86f1c7ca11e, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0.298
+      objectReference: {fileID: 0}
+    - target: {fileID: 2354766402577757347, guid: 8e45e34402f46704bb59c86f1c7ca11e, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.017
+      objectReference: {fileID: 0}
+    - target: {fileID: 2354766402577757347, guid: 8e45e34402f46704bb59c86f1c7ca11e, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2354766402577757347, guid: 8e45e34402f46704bb59c86f1c7ca11e, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2354766402577757347, guid: 8e45e34402f46704bb59c86f1c7ca11e, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2354766402577757347, guid: 8e45e34402f46704bb59c86f1c7ca11e, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2354766402577757347, guid: 8e45e34402f46704bb59c86f1c7ca11e, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 180
+      objectReference: {fileID: 0}
+    - target: {fileID: 2354766402577757347, guid: 8e45e34402f46704bb59c86f1c7ca11e, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2354766402577757347, guid: 8e45e34402f46704bb59c86f1c7ca11e, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2354766403576155928, guid: 8e45e34402f46704bb59c86f1c7ca11e, type: 3}
+      propertyPath: m_SortingOrder
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 2354766403576155929, guid: 8e45e34402f46704bb59c86f1c7ca11e, type: 3}
       propertyPath: m_LocalPosition.x
       value: 12.12
@@ -3702,6 +3742,10 @@ PrefabInstance:
       propertyPath: playerPoscheck
       value: 
       objectReference: {fileID: 459027021}
+    - target: {fileID: 2354766403576155930, guid: 8e45e34402f46704bb59c86f1c7ca11e, type: 3}
+      propertyPath: Spit
+      value: 
+      objectReference: {fileID: 1347319938122058994, guid: 57db9ebb238d1fe408426302a31e0e74, type: 3}
     - target: {fileID: 2354766403576155932, guid: 8e45e34402f46704bb59c86f1c7ca11e, type: 3}
       propertyPath: m_Name
       value: spitRat

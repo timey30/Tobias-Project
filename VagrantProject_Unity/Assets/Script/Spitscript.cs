@@ -30,11 +30,11 @@ public class Spitscript : MonoBehaviour
 
         if (enemyTransform == new Vector3(1, 1, 1))
         {
-            transform.Translate(Vector2.right * speed * Time.deltaTime);
+            transform.Translate(Vector2.left * speed * Time.deltaTime);
         }
         else if (enemyTransform == new Vector3(-1, 1, 1))
         {
-            transform.Translate(Vector2.left * speed * Time.deltaTime);
+            transform.Translate(Vector2.right * speed * Time.deltaTime);
         }
 
 
