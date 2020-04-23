@@ -5,6 +5,10 @@ using UnityEngine.UI;
 
 public class Heart : MonoBehaviour
 {
+    private Animator anim;
+    private GameObject script;
+    private GameObject colide;
+    public GameObject GameOverUI;
     private int maxHeart = 6;
     public int startHeart = 3;
     public int curHealth;
@@ -13,15 +17,30 @@ public class Heart : MonoBehaviour
 
     public Image[] healthImage;
     public Sprite[] healthSprite;
-    
+
     void Start()
     {
+        script = GameObject.FindWithTag("Player");
+        anim = gameObject.GetComponent<Animator>();
         curHealth = startHeart * healthPer;
         maxHealth = maxHeart * healthPer;
         checkHealth();
     }
 
-   void checkHealth()
+    IEnumerator Wait()
+    {    
+        FindObjectOfType<Movement>().PColide();
+        FindObjectOfType<AudioManager>().Play("Death");
+        anim.Play("Death");
+        script.GetComponent<Movement>().enabled = false;
+        yield return new WaitForSeconds(2);
+        GameOverUI.SetActive(true);
+        Time.timeScale = 1f;
+        FindObjectOfType<GameMan>().EndGame();
+        
+    }
+
+    void checkHealth()
     {
         for (int i = 0; i < maxHeart; i++)
         {
@@ -69,7 +88,7 @@ public class Heart : MonoBehaviour
 
     public void TakeDamage(int amount)
     {
-
+        
         curHealth += amount;
         curHealth = Mathf.Clamp(curHealth, 0, startHeart * healthPer);
         if (amount < 0)
@@ -82,7 +101,10 @@ public class Heart : MonoBehaviour
         }
         if (curHealth == 0)
         {
-            FindObjectOfType<AudioManager>().Play("Death");
+           
+            StartCoroutine(Wait());
+            
+            
         }
         UpdateHeart();
 

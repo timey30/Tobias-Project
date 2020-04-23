@@ -9,14 +9,17 @@ public class Movement : MonoBehaviour
     private float speed = 2f;
     public float rollSpeed = 2f;
     Collider2D PCollider;
+    Rigidbody2D PRigid;
 
     public Animator anim;
 
+    
     
 
     void Start()
     {
         PCollider = GetComponent<Collider2D>();
+        PRigid = GetComponent<Rigidbody2D>();
         anim = gameObject.GetComponent<Animator>();
     }
 
@@ -36,6 +39,11 @@ public class Movement : MonoBehaviour
         PCollider.enabled = true;
     }
 
+    public void PColide()
+    {
+        PCollider.enabled = false;
+        PRigid.isKinematic = true;
+    }
 
     void PlMove()
     {

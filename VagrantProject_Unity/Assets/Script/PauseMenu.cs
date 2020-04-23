@@ -7,27 +7,27 @@ public class PauseMenu : MonoBehaviour
     public GameObject pauseMenueUI;
     public GameObject sett;
     public static bool GameIsPaused = false;
+    private GameObject script;
 
 
-    
-    
-
-    
-    // Update is called once per frame
     void Update()
     {
+        script = GameObject.FindWithTag("Player");
+        
 
         if (Input.GetKeyDown(KeyCode.Escape))
         {
             if (GameIsPaused)
             {
                 pauseMenueUI.SetActive(false);
+                script.GetComponent<Movement>().enabled = true;
                 Time.timeScale = 1f;
                 GameIsPaused = false;
             }
             else
             {
                 pauseMenueUI.SetActive(true);
+                script.GetComponent<Movement>().enabled = false;
                 Time.timeScale = 0f;
                 GameIsPaused = true;
             }
@@ -38,6 +38,7 @@ public class PauseMenu : MonoBehaviour
     public void Resume()
     {
         pauseMenueUI.SetActive(false);
+        script.GetComponent<Movement>().enabled = true;
         Time.timeScale = 1f;
         GameIsPaused = false;
         FindObjectOfType<AudioManager>().Play("PauseClose");

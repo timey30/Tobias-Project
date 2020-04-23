@@ -5,6 +5,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class AudioManager : MonoBehaviour
 {
@@ -41,7 +42,15 @@ public class AudioManager : MonoBehaviour
 
     void Start()
     {
-        Play("MenuMusic");
+        if (SceneManager.GetActiveScene().name == "MainMenu" || SceneManager.GetActiveScene().name == "LevelSelect" || SceneManager.GetActiveScene().name == "OptionsMenu")
+        {
+            Play("MenuMusic");
+        }else if (SceneManager.GetActiveScene().name == "Game")
+        {
+            Play("GameMusic");
+        }
+
+
     }
 
     public void Play(string name)

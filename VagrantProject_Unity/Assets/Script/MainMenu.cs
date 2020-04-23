@@ -5,18 +5,8 @@ using UnityEngine.SceneManagement;
 using UnityEngine.Audio;
 
 public class MainMenu : MonoBehaviour
-{
-    public string sceneName;
-    public float waitTime;
-    public Animator musicAnim;
-   
-    IEnumerator ChangeScene()
-    {
-        musicAnim.SetTrigger("Fadeout");
-        yield return new WaitForSeconds(waitTime);
-        SceneManager.LoadScene(sceneName);
-    }
-
+{   
+    
     public void PlayGame()
     {
         
@@ -28,10 +18,17 @@ public class MainMenu : MonoBehaviour
         SceneManager.LoadScene("MainMenu");
     }
 
+    public void Options()
+    {
+        SceneManager.LoadScene("OptionsMenu");
+    }
+
     public void Level1()
     {
-        StartCoroutine(ChangeScene());
-        
+        FindObjectOfType<AudioManager>().Stop("MenuMusic");
+        FindObjectOfType<AudioManager>().Play("GameMusic");
+        SceneManager.LoadScene("Game");
+
     }
 
 }
