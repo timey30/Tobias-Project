@@ -27,7 +27,7 @@ public class MainMenu : MonoBehaviour
     {
         FindObjectOfType<AudioManager>().Stop("MenuMusic");
         FindObjectOfType<AudioManager>().Play("GameMusic");
-        SceneManager.LoadScene("Game");
+        FindObjectOfType<LevelLoader>().LoadLevel("Game");
 
     }
 
